@@ -14,8 +14,5 @@ app.listen(PORT, () => {
 });
 // initial route for start-up
 app.get("/", (req, res) => {
-    res.send("HELLO FROM EXPRESS with TypeScript!!!");
-});
-app.get("/hi", (req, res) => {
-    res.send("HIIIIII");
+    res.send("Hello World!");
 });
