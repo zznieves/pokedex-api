@@ -1,5 +1,6 @@
 // import the Express module into the file
 import express, { Express, Request, Response } from "express";
+import axios from "axios";
 
 // create a web server
 const app: Express = express();
@@ -11,6 +12,9 @@ app.listen(PORT, () => {
 
     console.log(`Server now up and running on PORT ${PORT}`);
 });
+
+
+// connecting to SupaBase
 
 // initial route for start-up
 app.get("/", (req: Request, res: Response) => {
