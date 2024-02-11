@@ -35,7 +35,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const pg_1 = require("pg");
 const dotenv = __importStar(require("dotenv"));
-// load process.env with the values from our .env file
+// load 'process.env' global variable with the values from our .env file
 dotenv.config();
 // create a connection pool: multiple reusable connections for querying the database
 const pool = new pg_1.Pool({
@@ -45,7 +45,7 @@ const pool = new pg_1.Pool({
     connectionTimeoutMillis: 2000
 });
 // query the database: send a query string along with parameters
-function query(text, params) {
+function dbQuery(text, params) {
     return __awaiter(this, void 0, void 0, function* () {
         const client = yield pool.connect();
         try {
@@ -57,4 +57,4 @@ function query(text, params) {
     });
 }
 // export the query function to be used in other files
-exports.default = query;
+exports.default = dbQuery;
